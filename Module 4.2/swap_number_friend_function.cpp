@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+class Swap
+{
+    int a, b, temp;
+
+public:
+    void input()
+    {
+        cout << "Enter two numbers: ";
+        cin >> b >> a;
+    }
+    friend void swap(Swap s);
+    void display()
+    {
+        cout << "After swap a is " << a << endl;
+        cout << "After swap b is " << b << endl;
+    }
+};
+void swap(Swap s)
+{
+    s.temp = s.a;
+    s.a = s.b;
+    s.b = s.temp;
+}
+int main()
+{
+    Swap s;
+    s.input();
+    swap(s);
+    s.display();
+
+    return 0;
+}
